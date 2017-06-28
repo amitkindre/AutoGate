@@ -3,7 +3,11 @@
         <file>main.qml</file>
         <file>qtquickcontrols2.conf</file>
         <file>LoginPage.qml</file>
-        <file>AddUserPage.qml</file>
+        <file>SelectUserPage.qml</file>
         <file>HomePage.qml</file>
+        <file>ControlPage.qml</file>
+        <file>GateClosed.png</file>
+        <file>GateOpen.png</file>
+        <file>AddUserPage.qml</file>
     </qresource>
 </RCC>

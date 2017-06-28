@@ -25,10 +25,10 @@ Item {
             id: helloLable
 
             width: 100
-            height: 20
+            height: 30
             text: qsTr("Hello")
             font.bold: true
-            font.pointSize: 10
+            font.pointSize: 20
             verticalAlignment: Text.AlignVCenter
         }
 
@@ -39,17 +39,17 @@ Item {
                 id: activeUser
 
                 width: 200
-                height: 30
+                height: 50
                 text: qsTr("Amit Kindre")
-                font.bold: true
+                //font.bold: true
                 verticalAlignment: Text.AlignVCenter
-                font.pointSize: 15
+                font.pointSize: 25
             }
 
             RoundButton {
                 id: changeUserRoundButton
-                width: 30
-                height: 30
+                width: 50
+                height: 50
                 text: "+"
 
                 onClicked: {
@@ -60,27 +60,35 @@ Item {
 
         TextField {
             id: passwordField
+            height: 50
             anchors.left: parent.left
             anchors.leftMargin: 0
             anchors.right: parent.right
             anchors.rightMargin: 0
+
+            echoMode: TextField.Password
             placeholderText: qsTr("Password")
+
+            //font.bold: true
+            font.pointSize: 15
         }
 
         Button {
             id: loginButton
 
-            height: 40
+            height: 60
             anchors.left: parent.left
             anchors.leftMargin: 0
             anchors.right: parent.right
             anchors.rightMargin: 0
 
+            background: {
+                color: "red"
+            }
+
             text: qsTr("Login")
-            spacing: 4
             font.letterSpacing: 2
-            font.wordSpacing: 0
-            font.pointSize: 12
+            font.pointSize: 15
             font.bold: true
         }
 

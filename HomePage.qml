@@ -18,8 +18,12 @@ Item {
             id:loginPage
         }
 
-        AddUserPage{
+        SelectUserPage{
             id: userPage
+        }
+
+        ControlPage{
+            id: controlPage
         }
     }
 

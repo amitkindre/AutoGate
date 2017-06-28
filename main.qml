@@ -10,9 +10,7 @@ ApplicationWindow {
     title: qsTr("Hello World")
 
     HomePage{
+        id: homePage
         anchors.fill: parent
-
     }
-
-
 }
