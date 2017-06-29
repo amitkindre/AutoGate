@@ -82,17 +82,19 @@ Item {
             anchors.right: parent.right
             anchors.rightMargin: 0
 
-            background: {
-                color: "red"
-            }
-
             text: qsTr("Login")
             font.letterSpacing: 2
             font.pointSize: 15
             font.bold: true
+
+            onClicked: loginProcess()
         }
 
 
     }
 
+    function loginProcess(){
+      console.log("Login button Pressed")
+      wifiscan.scanNetworks();
+    }
 }
