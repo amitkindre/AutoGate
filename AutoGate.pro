@@ -33,7 +33,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    JWifi.java
+    JWifi.java \
+    TestClass.java
 
 HEADERS += \
     wifiscan.h

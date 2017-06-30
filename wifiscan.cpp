@@ -8,7 +8,7 @@ wifiScan::wifiScan(QObject *parent) : QObject(parent)
 void wifiScan::scanNetworks()
 {
 #ifdef __ANDROID__
-       QAndroidJniObject  x = QAndroidJniObject::callStaticObjectMethod<jstring>("com/android/AutoGate/JWifi",
+       QAndroidJniObject  x = QAndroidJniObject::callStaticObjectMethod<jstring>("org/qtproject/example/AutoGate/TestClass",
                                                     "getSize");
 
         qDebug() << "java says";
