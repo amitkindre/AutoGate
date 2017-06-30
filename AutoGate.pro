@@ -1,6 +1,7 @@
 QT += qml quick
-QT += androidextras
+android: QT += androidextras
 
+android: #define __ANDROID__
 
 CONFIG += c++11
 

@@ -3,7 +3,10 @@
 
 #include <QObject>
 #include <QDebug>
+
+#ifdef __ANDROID__
 #include <QAndroidJniObject>
+#endif
 
 class wifiScan : public QObject
 {

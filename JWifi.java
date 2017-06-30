@@ -1,9 +1,10 @@
 // Java class
-//package org.qtproject.qt5;
-//package org.qtproject.example
-class JWifi
+package com.android.AutoGate;
+//package org.qtproject.example.AutoGate;
+
+public class JWifi
 {
-   static String getSize(){
+   public static String getSize(){
        return "5";
    }
 
