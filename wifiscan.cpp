@@ -11,7 +11,7 @@ void wifiScan::scanNetworks()
        QAndroidJniObject  x = QAndroidJniObject::callStaticObjectMethod<jstring>("org/qtproject/example/AutoGate/TestClass",
                                                     "getSize");
 
-        qDebug() << "java says";
+        qDebug() << "java says";                    //package org.qtproject.example.AutoGate;
         qDebug() << x.toString();
 #else
 #endif

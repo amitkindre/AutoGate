@@ -34,7 +34,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     JWifi.java \
-    TestClass.java
+    org/qtproject/example/AutoGate/TestClass.java
 
 HEADERS += \
     wifiscan.h
