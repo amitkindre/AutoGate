@@ -1,14 +1,21 @@
 QT += qml quick
+QT += sql
 android: QT += androidextras
-
+QT += core
 android: #define __ANDROID__
+
+android: ANDROID_PACKAGE_SOURCE_DIR = $$PWD/org
+
+TARGET = AutoGate
 
 CONFIG += c++11
 
 SOURCES += main.cpp \
-    wifiscan.cpp
+    wifiscan.cpp \
+    userdatabse.cpp
 
 RESOURCES += qml.qrc
+
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -33,8 +40,10 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    JWifi.java \
-    org/qtproject/example/AutoGate/TestClass.java
+    org/qtproject/example/AutoGate/TestClass.java \
+    org/qtproject/example/AutoGate/JWifi.java \
+    org/qtproject/example/AutoGate/JWifi.java
 
 HEADERS += \
-    wifiscan.h
+    wifiscan.h \
+    userdatabse.h

@@ -1,8 +1,16 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.2
+import QtQml 2.2 //for completed event
 
 Item {
     id: item1
+    Component.onCompleted: listUser();
+
+    Connections{
+        target: udbase
+        onFunc: listModel.append({"namex":UserName,"colorCode":"lightgreen"})
+    }
+
 
     Column{
         id: column
@@ -10,12 +18,13 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
 
-        spacing: 10
+        spacing: 30
 
         Label {
             id: selectUserLable
             height: 30
             text: "Chose an account"
+            z: 1
             anchors.right: parent.right
             anchors.rightMargin: 0
             anchors.left: parent.left
@@ -25,46 +34,45 @@ Item {
             verticalAlignment: Text.AlignVCenter
         }
 
+
+
         ListView {
             id: listView
+            width: 200
+            height: 160
+            snapMode: ListView.SnapToItem
 
-            height: 150
-            anchors.left: parent.left
-            anchors.leftMargin: 0
-            anchors.right: parent.right
-            anchors.rightMargin: 0
+            contentHeight: 40
+            contentWidth: 200
             spacing: 5
 
-            delegate: Item {
+            boundsBehavior: Flickable.StopAtBounds
+            model: ListModel{
+                id: listModel
+                ListElement{
+                    namex: "Admin"
+                    colorCode:"steelblue"
+                }
+            }
 
+            delegate: Item {
+                x: 5
                 width: 80
                 height: 40
-
                 Row {
                     id: row1
-                    spacing: 10
                     Rectangle {
                         width: 40
                         height: 40
                         color: colorCode
                     }
 
-                    Label{
-                        text: name
-                        font.pixelSize: 20
+                    Text {
+                        text: namex
+                        font.bold: true
                         anchors.verticalCenter: parent.verticalCenter
                     }
-                }
-            }
-            model: ListModel {
-                ListElement {
-                    name: "Amit Kindre"
-                    colorCode: "grey"
-                }
-
-                ListElement {
-                    name: "Santosh "
-                    colorCode: "red"
+                    spacing: 10
                 }
             }
         }
@@ -81,6 +89,21 @@ Item {
             font.pointSize: 15
             font.bold: true
 
+            onClicked:{
+                 //listModel.append({"namex":list[0].name,"colorCode":"pink"})
+
+
+            }
+
         }
+
+    }
+    function listUser(){
+        udbase.listAllUsers()
+    }
+
+    function addUser(){
+        listModel.append({"namex":UserName,"colorCode":"lightgreen"})
     }
 }
+

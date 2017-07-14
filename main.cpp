@@ -7,6 +7,10 @@
 #include "wifiscan.h"
 
 
+#include "userdatabse.h"
+
+
+
 int main(int argc, char *argv[])
 {
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
@@ -18,12 +22,27 @@ int main(int argc, char *argv[])
 
     wifiScan wifis;                                 //wifi scanner object
 
-    contextp->setContextProperty("wifiscan",&wifis);   //make object visible in qml
-    //contextp->setContextProperty("jWifiScan",&JWifi);
+
+    UserDatabse udb;
+    contextp->setContextProperty("wscan",&wifis);   //make object visible in qml
+    contextp->setContextProperty("udbase",&udb);
+
+    udb.connectDatabase();
+    udb.initDatabase();
+    //udb.insertDatabase(1,"Amit","amit");
+    //udb.insertDatabase(2,"Santosh","santu");
+    //QVector<QString> ulist= udb.getDatabaseCount();
+    //for(QVector<QString>::iterator i = ulist.begin(); i!= ulist.end(); i++)
+        //qDebug() << "Data: " << *i;
+
+
 
     engine.load(QUrl(QLatin1String("qrc:/main.qml")));
     if (engine.rootObjects().isEmpty())
         return -1;
 
+
+
     return app.exec();
 }
+

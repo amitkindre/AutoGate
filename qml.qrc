@@ -9,5 +9,6 @@
         <file>GateClosed.png</file>
         <file>GateOpen.png</file>
         <file>AddUserPage.qml</file>
+        <file>org/qtproject/example/AutoGate/JWifi.java</file>
     </qresource>
 </RCC>

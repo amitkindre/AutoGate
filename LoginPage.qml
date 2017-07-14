@@ -87,14 +87,14 @@ Item {
             font.pointSize: 15
             font.bold: true
 
-            onClicked: loginProcess()
+            onClicked: {
+                console.log("Login button Pressed")
+                wscan.scanNetworks();
+            }
         }
 
 
     }
 
-    function loginProcess(){
-      console.log("Login button Pressed")
-      wifiscan.scanNetworks();
-    }
+
 }
